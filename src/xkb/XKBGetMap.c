@@ -722,6 +722,8 @@ XkbGetVirtualMods(Display *dpy, unsigned which, XkbDescPtr xkb)
 
     req = _XkbGetGetMapReq(dpy, xkb);
     req->virtualMods = which;
+    /* mmc:  we want this information, so the mask must be set! */
+    req->partial = XkbVirtualModsMask;
     status = _XkbHandleGetMapReply(dpy, xkb);
 
     UnlockDisplay(dpy);
@@ -787,6 +789,7 @@ XkbGetKeyModifierMap(Display *dpy,
     req = _XkbGetGetMapReq(dpy, xkb);
     req->firstModMapKey = first;
     req->nModMapKeys = num;
+    req->partial = XkbModifierMapMask;               /* mmc: once again (see above) */
     if ((xkb != NULL) && (xkb->map != NULL) && (xkb->map->modmap != NULL)) {
         if ((num > 0) && (first >= xkb->min_key_code) &&
             (first + num <= xkb->max_key_code))
@@ -819,6 +822,7 @@ XkbGetKeyVirtualModMap(Display *dpy, unsigned first, unsigned num,
     LockDisplay(dpy);
 
     req = _XkbGetGetMapReq(dpy, xkb);
+    req->partial = XkbVirtualModMapMask; /* mmc! again */
     req->firstVModMapKey = first;
     req->nVModMapKeys = num;
     if ((xkb != NULL) && (xkb->map != NULL) && (xkb->map->modmap != NULL)) {
