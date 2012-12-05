@@ -253,8 +253,6 @@ _XkbReadKeyActions(XkbReadBufferPtr buf, XkbDescPtr info, xkbGetMapReply *rep)
     Status ret = Success;
 
     if ((nKeyActs = rep->nKeyActs) > 0) {
-        XkbSymMapPtr symMap;
-
         if (nKeyActs < sizeof numDescBuf)
             numDesc = numDescBuf;
         else
@@ -269,8 +267,12 @@ _XkbReadKeyActions(XkbReadBufferPtr buf, XkbDescPtr info, xkbGetMapReply *rep)
             ret = BadLength;
             goto done;
         }
-        symMap = &info->map->key_sym_map[rep->firstKeyAct];
-        for (i = 0; i < (int) rep->nKeyActs; i++, symMap++) {
+        /* mmc:  this probably should check that the number of actions & keysyms is
+         * the same for each keycode.
+         * But for now it doesn't, so i disable it. */
+        // symMap = &info->map->key_sym_map[rep->firstKeyAct];
+
+        for (i = 0; i < (int) rep->nKeyActs; i++) {
             if (numDesc[i] == 0) {
                 if ((i + rep->firstKeyAct) > (info->max_key_code + 1)) {
                     ret = BadLength;
