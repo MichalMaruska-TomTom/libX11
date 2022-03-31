@@ -1,11 +1,11 @@
-libx11 (2:1.7.4-1) UNRELEASED; urgency=medium
+libx11 (2:1.7.4-1) unstable; urgency=medium
 
   * New upstream release.
   * 0001-makekeys..patch: Deleted, upstream.
   * patches: Refreshed.
   * Update signing-key.asc.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Thu, 31 Mar 2022 14:56:02 +0300
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 31 Mar 2022 22:21:59 +0300
 
 libx11 (2:1.7.2-2) unstable; urgency=medium
 
