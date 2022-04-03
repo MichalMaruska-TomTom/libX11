@@ -1,3 +1,9 @@
+libx11 (2:1.7.5-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1008890)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 03 Apr 2022 22:29:52 +0300
+
 libx11 (2:1.7.4-1) unstable; urgency=medium
 
   * New upstream release.
