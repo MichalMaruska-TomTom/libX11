@@ -1,8 +1,8 @@
-libx11 (2:1.8.1-2) UNRELEASED; urgency=medium
+libx11 (2:1.8.1-2) unstable; urgency=medium
 
   * rules: Disable thread safety constructor. (Closes: #1016363)
 
- -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Aug 2022 08:41:29 +0300
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Aug 2022 09:21:33 +0300
 
 libx11 (2:1.8.1-1) unstable; urgency=medium
 
