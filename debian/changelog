@@ -1,3 +1,18 @@
+libx11 (2:1.8.3-1) UNRELEASED; urgency=medium
+
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on dpkg-dev, libxcb1-dev and
+      xutils-dev.
+    + Build-Depends-Indep: Drop versioned constraint on xorg-sgml-doctools.
+    + libx11-data: Drop versioned constraint on libx11-6 in Breaks.
+    + libx11-dev: Drop versioned constraint on libxau-dev and libxdmcp-dev in
+      Depends.
+    + libx11-xcb-dev: Drop versioned constraint on libxcb1-dev in Depends.
+    + libx11-doc: Drop versioned constraint on libx11-dev in Replaces.
+    + libx11-doc: Drop versioned constraint on libx11-dev in Breaks.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Mon, 21 Nov 2022 21:42:50 -0000
+
 libx11 (2:1.8.3-1) unstable; urgency=medium
 
   * New upstream release.
