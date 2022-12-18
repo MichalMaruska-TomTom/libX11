@@ -275,6 +275,7 @@ static xcb_generic_reply_t *poll_for_event(Display *dpy, Bool queued_only)
 			uint64_t request = X_DPY_GET_REQUEST(dpy);
 			if (XLIB_SEQUENCE_COMPARE(event_sequence, >, request))
 			{
+			        fprintf(stderr, "[xcb] %llu vs %llu\n", event_sequence, request);
 				throw_thread_fail_assert("Unknown sequence "
 				                         "number while "
 							 "processing queue",
