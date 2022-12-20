@@ -77,7 +77,9 @@ ZEROINIT (_XQEvent *, _qfree, NULL);
 /*
  * Debugging information and display list; used to be in XOpenDis.c
  */
+#ifndef WIN32
 ZEROINIT (int, _Xdebug, 0);
+#endif
 ZEROINIT (Display *, _XHeadOfDisplayList, NULL);
 
 
@@ -102,5 +104,11 @@ __attribute__((constructor)) static void
 xlib_ctor(void)
 {
     XInitThreads();
+}
+
+__attribute__((destructor)) static void
+xlib_dtor(void)
+{
+    XFreeThreads();
 }
 #endif

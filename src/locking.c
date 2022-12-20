@@ -455,6 +455,48 @@ static void _XDisplayLockWait(
 static void _XLockDisplay(
     Display *dpy
     XTHREADS_FILE_LINE_ARGS
+    );
+
+static void _XIfEventLockDisplay(
+    Display *dpy
+    XTHREADS_FILE_LINE_ARGS
+    )
+{
+    /* assert(dpy->in_ifevent); */
+}
+
+static void _XInternalLockDisplay(
+    Display *dpy,
+    Bool wskip
+    XTHREADS_FILE_LINE_ARGS
+    );
+
+static void _XIfEventInternalLockDisplay(
+    Display *dpy,
+    Bool wskip
+    XTHREADS_FILE_LINE_ARGS
+    )
+{
+    /* assert(dpy->in_ifevent); */
+}
+
+static void _XIfEventUnlockDisplay(
+    Display *dpy
+    XTHREADS_FILE_LINE_ARGS
+    )
+{
+    if (dpy->in_ifevent == 0) {
+	dpy->lock_fns->lock_display = _XLockDisplay;
+	dpy->lock_fns->unlock_display = _XUnlockDisplay;
+	dpy->lock->internal_lock_display = _XInternalLockDisplay;
+	UnlockDisplay(dpy);
+    } else
+	return;
+}
+
+static void _XLockDisplay(
+    Display *dpy
+    XTHREADS_FILE_LINE_ARGS
     )
 {
 #ifdef XTHREADS
@@ -478,6 +520,11 @@ static void _XLockDisplay(
 #endif
     _XIDHandler(dpy);
     _XSeqSyncFunction(dpy);
+    if (dpy->in_ifevent) {
+	dpy->lock_fns->lock_display = _XIfEventLockDisplay;
+	dpy->lock_fns->unlock_display = _XIfEventUnlockDisplay;
+	dpy->lock->internal_lock_display = _XIfEventInternalLockDisplay;
+    }
 }
 
 /*
@@ -643,8 +690,31 @@ Status XInitThreads(void)
     return 1;
 }
 
+Status XFreeThreads(void)
+{
+    if (global_lock.lock != NULL) {
+	xmutex_free(global_lock.lock);
+	global_lock.lock = NULL;
+    }
+    if (i18n_lock.lock != NULL) {
+	xmutex_free(i18n_lock.lock);
+	i18n_lock.lock = NULL;
+    }
+    if (conv_lock.lock != NULL) {
+	xmutex_free(conv_lock.lock);
+	conv_lock.lock = NULL;
+    }
+
+    return 1;
+}
+
 #else /* XTHREADS */
 Status XInitThreads(void)
+{
+    return 0;
+}
+
+Status XFreeThreads(void)
 {
     return 0;
 }
