@@ -12,9 +12,6 @@ override_dh_auto_configure-indep override_dh_auto_configure-arch:
 		--disable-thread-safety-constructor \
 		--without-fop
 
-override_dh_installdocs:
-	dh_installdocs NEWS
-
 override_dh_install:
 	# Kill *.xml, *.la files, we don't need them:
 	find debian/tmp -name '*.xml' -delete
