@@ -1,4 +1,4 @@
-libx11 (2:1.8.3-2) UNRELEASED; urgency=medium
+libx11 (2:1.8.3-2) unstable; urgency=medium
 
   [ Debian Janitor ]
   * Remove constraints unnecessary since buster (oldstable):
@@ -19,7 +19,7 @@ libx11 (2:1.8.3-2) UNRELEASED; urgency=medium
   * rules: NEWS got removed, don't try to install it.
   * symbols: Updated.
 
- -- Debian Janitor <janitor@jelmer.uk>  Mon, 21 Nov 2022 21:42:50 -0000
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Dec 2022 17:02:56 +0200
 
 libx11 (2:1.8.3-1) unstable; urgency=medium
 
