@@ -15,6 +15,7 @@ libx11 (2:1.8.3-1) UNRELEASED; urgency=medium
   [ Timo Aaltonen ]
   * patches: Revert four commits to fix a regression which is still
     unfixed.
+  * rules: Add --disable-thread-safety-constructor again.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 21 Nov 2022 21:42:50 -0000
 
