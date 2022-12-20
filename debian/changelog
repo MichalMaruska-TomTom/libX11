@@ -1,5 +1,6 @@
 libx11 (2:1.8.3-1) UNRELEASED; urgency=medium
 
+  [ Debian Janitor ]
   * Remove constraints unnecessary since buster (oldstable):
     + Build-Depends: Drop versioned constraint on dpkg-dev, libxcb1-dev and
       xutils-dev.
@@ -10,6 +11,10 @@ libx11 (2:1.8.3-1) UNRELEASED; urgency=medium
     + libx11-xcb-dev: Drop versioned constraint on libxcb1-dev in Depends.
     + libx11-doc: Drop versioned constraint on libx11-dev in Replaces.
     + libx11-doc: Drop versioned constraint on libx11-dev in Breaks.
+
+  [ Timo Aaltonen ]
+  * patches: Revert four commits to fix a regression which is still
+    unfixed.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 21 Nov 2022 21:42:50 -0000
 
