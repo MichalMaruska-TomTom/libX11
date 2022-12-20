@@ -1,10 +1,10 @@
-libx11 (2:1.8.3-1) UNRELEASED; urgency=medium
+libx11 (2:1.8.3-1) unstable; urgency=medium
 
   * New upstream release.
   * rules: The new upstream release allows to drop --disable-thread-
     safety-constructor build option.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Dec 2022 15:50:27 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Dec 2022 16:01:24 +0200
 
 libx11 (2:1.8.1-2) unstable; urgency=medium
 
