@@ -1,8 +1,8 @@
-libx11 (2:1.8.3-3) UNRELEASED; urgency=medium
+libx11 (2:1.8.3-3) unstable; urgency=medium
 
   * Revert yet another commit causing regressions. (Closes: #1026809)
 
- -- Timo Aaltonen <tjaalton@debian.org>  Fri, 23 Dec 2022 12:57:15 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 23 Dec 2022 12:57:26 +0200
 
 libx11 (2:1.8.3-2) unstable; urgency=medium
 
