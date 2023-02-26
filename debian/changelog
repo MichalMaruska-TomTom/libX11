@@ -1,6 +1,7 @@
 libx11 (2:1.8.4-1) UNRELEASED; urgency=medium
 
   * New upstream version. (Closes: #1031697)
+  * patches: Drop reverts, as the issues should be fixed upstream.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Sun, 26 Feb 2023 11:25:02 +0200
 

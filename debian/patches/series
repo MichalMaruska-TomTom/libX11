@@ -3,8 +3,3 @@
 008_remove_ko_Compose.diff
 009_remove_th_Compose.diff
 015_russian_locale_alias.diff
-0001-Revert-ChkIfEv.c-fix-wrong-handling-of-dpy-in_ifeven.patch
-0002-Revert-Indentation-fixes-around-recent-dpy-in_ifeven.patch
-0003-Revert-Fix-797755-Allow-X-IfEvent-to-reenter-libX11.patch
-0004-Revert-Allow-X-IfEvent-to-reenter-libX11.patch
-0001-Revert-Update-XPutBackEvent-to-support-clients-that-.patch
