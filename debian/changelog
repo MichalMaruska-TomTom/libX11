@@ -1,3 +1,9 @@
+libx11 (2:1.8.4-1) UNRELEASED; urgency=medium
+
+  * New upstream version. (Closes: #1031697)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 26 Feb 2023 11:25:02 +0200
+
 libx11 (2:1.8.3-3) unstable; urgency=medium
 
   * Revert yet another commit causing regressions. (Closes: #1026809)
