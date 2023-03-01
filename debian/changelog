@@ -1,3 +1,25 @@
+libx11 (2:1.8.4-2-maruska) unstable; urgency=medium
+
+  * xkb fix: when Types change, I have to reload the whole keymap ??
+  * Add the plugin requests implementation
+  * debian adjustment
+  * shrinking the map
+  * shrink 2
+  * when resizing (keycode range), do so for the "explicit" map too.
+  * hm. comments
+  * problem with the case  0?
+  * driving by symMap is broken?
+  * fix in _XkbReadGetMapReply? I think the length includes the header.
+  * when asking XkbGetVirtualMods, complete the request bit.
+  * same for XkbGetKeyModifierMap
+  * same for XkbGetKeyVirtualModMap
+  * XkbGetKeyVirtualModMap: test server not (client) map.
+  * _XkbTypedRealloc is gone.
+  * space
+  * provide more info when sequence number mess
+
+ -- Michal Maruska <mmaruska@gmail.com>  Wed, 01 Mar 2023 13:43:46 +0100
+
 libx11 (2:1.8.4-2) unstable; urgency=medium
 
   * rules: Drop --disable-thread-safety-constructor again.
