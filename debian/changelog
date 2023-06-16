@@ -1,3 +1,12 @@
+libx11 (2:1.8.6-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - InitExt.c: Add bounds checks for extension request, event, & error codes
+      (CVE-2023-3138)
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 16 Jun 2023 14:36:12 +0200
+
 libx11 (2:1.8.4-2) unstable; urgency=medium
 
   * rules: Drop --disable-thread-safety-constructor again.
