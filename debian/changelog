@@ -1,3 +1,9 @@
+libx11 (2:1.8.7-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 04 Oct 2023 13:10:39 +0300
+
 libx11 (2:1.8.6-1) unstable; urgency=medium
 
   * Team upload.
