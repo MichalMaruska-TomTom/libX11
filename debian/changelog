@@ -1,4 +1,4 @@
-libx11 (2:1.8.10-1) UNRELEASED; urgency=medium
+libx11 (2:1.8.10-1) unstable; urgency=medium
 
   * Add symbols file for libx11-xcb1.
   * New upstream release.
@@ -7,7 +7,7 @@ libx11 (2:1.8.10-1) UNRELEASED; urgency=medium
   * Adjust dh_makeshlibs call for libx11-xcb1 to not generate versioned
     dependencies.
 
- -- Julien Cristau <jcristau@debian.org>  Fri, 01 Nov 2024 11:47:55 +0100
+ -- Julien Cristau <jcristau@debian.org>  Fri, 01 Nov 2024 14:47:39 +0100
 
 libx11 (2:1.8.7-1) unstable; urgency=medium
 
