@@ -4,6 +4,8 @@ libx11 (2:1.8.10-1) UNRELEASED; urgency=medium
   * New upstream release.
   * 001_ximcp-hide-internal-functions.diff: add, avoid exporting new
     symbols.
+  * Adjust dh_makeshlibs call for libx11-xcb1 to not generate versioned
+    dependencies.
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 01 Nov 2024 11:47:55 +0100
 
