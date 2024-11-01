@@ -1,0 +1,42 @@
+From 0297dea292b749494624982fe9cf9dc4c6a55162 Mon Sep 17 00:00:00 2001
+From: Julien Cristau <jcristau@debian.org>
+Date: Fri, 1 Nov 2024 13:03:56 +0100
+Subject: [PATCH] ximcp: hide internal functions
+
+commit 13e9ac4d45 "ximcp: Unmark to fabricate key events with XKeyEvent
+serial" added new _XimFabricateSerial / _XimUnfabricateSerial /
+_XimIsFabricatedSerial functions; they don't need to be exported by
+libX11.
+---
+ src/xlibi18n/XimintP.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/xlibi18n/XimintP.h b/src/xlibi18n/XimintP.h
+index 1afa3c75..525e1ddb 100644
+--- a/src/xlibi18n/XimintP.h
++++ b/src/xlibi18n/XimintP.h
+@@ -311,18 +311,18 @@ typedef struct _XicProtoPrivateRec {
+ #define XIM_MAXIMNAMELEN 64
+ #define XIM_MAXLCNAMELEN 64
+ 
+-Bool
++_X_HIDDEN Bool
+ _XimFabricateSerial(
+     Xim                  im,
+     XKeyEvent           *event);
+ 
+-Bool
++_X_HIDDEN Bool
+ _XimUnfabricateSerial(
+     Xim                  im,
+     Xic                  ic,
+     XKeyEvent           *event);
+ 
+-Bool
++_X_HIDDEN Bool
+ _XimIsFabricatedSerial(
+     Xim                  im,
+     XKeyEvent           *event);
+-- 
+2.39.5
+
