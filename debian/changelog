@@ -1,3 +1,20 @@
+libx11 (2:1.8.10-1-maruska) unstable; urgency=medium
+
+  * Fix (xkb): when xkb-Types change, set flag to reload whole keymap
+  * When adjusting keymap -- symbols and actions, do memory shrinking if 64 too many
+  * when resizing (due to keycode range), do so for the "explicit" map too.
+  * fix: problem when totalSyms is 0
+  * Drop useless walking symMap
+  * fix in _XkbReadGetMapReply: I think the length includes the header.
+  * Fix: complete the request with necessary bit for XkbGetVirtualMods XkbGetKeyVirtualModMap, XkbGetKeyModifierMap
+  * XkbGetKeyVirtualModMap: test server not (client) map.
+  * Add the pipeline/plugin requests implementation
+  * debian adjustment
+  * hm. comments
+  * provide more info when sequence number mess
+
+ -- Michal Maruska <mmaruska@gmail.com>  Sat, 02 Nov 2024 10:25:08 +0100
+
 libx11 (2:1.8.10-1) unstable; urgency=medium
 
   * Add symbols file for libx11-xcb1.
